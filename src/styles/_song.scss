@@ -22,3 +22,11 @@ h2,
 h3 {
   color: rgb(44, 44, 44);
 }
+
+@media screen and (max-width: 768px) {
+  .song-container {
+    img {
+      width: 60%;
+    }
+  }
+}
