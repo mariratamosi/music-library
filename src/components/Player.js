@@ -9,6 +9,8 @@ import {
   faPause,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { playAudio } from "./util";
+
 const Player = ({
   currentSong,
   isPlaying,
@@ -38,14 +40,7 @@ const Player = ({
 
     setSongs(newSong);
 
-    if (isPlaying) {
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.then((audio) => {
-          audioRef.current.play();
-        });
-      }
-    }
+    playAudio(isPlaying, audioRef);
   }, [currentSong]);
 
   const playSongHandler = () => {
@@ -98,7 +93,7 @@ const Player = ({
           type="range"
           onChange={dragHandler}
         ></input>
-        <p>{getTime(songInfo.duration)}</p>
+        <p>{songInfo.duration ? getTime(songInfo.duration) : "00:00"}</p>
       </div>
       <div className="play-control">
         <FontAwesomeIcon
