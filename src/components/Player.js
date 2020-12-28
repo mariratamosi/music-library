@@ -18,7 +18,36 @@ const Player = ({
   setSongInfo,
   songs,
   setCurrentSong,
+  setSongs,
 }) => {
+  useEffect(() => {
+    //addActiveState
+    const newSong = songs.map((itemSong) => {
+      if (itemSong.id === currentSong.id) {
+        return {
+          ...currentSong,
+          active: true,
+        };
+      } else {
+        return {
+          ...itemSong,
+          active: false,
+        };
+      }
+    });
+
+    setSongs(newSong);
+
+    if (isPlaying) {
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.then((audio) => {
+          audioRef.current.play();
+        });
+      }
+    }
+  }, [currentSong]);
+
   const playSongHandler = () => {
     console.log(audioRef.current);
     if (isPlaying) {
