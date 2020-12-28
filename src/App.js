@@ -5,6 +5,7 @@ import data from "./data";
 import React, { useState, useRef } from "react";
 import Library from "./components/Libary";
 import Nav from "./components/nav";
+import { playAudio } from "./components/util";
 
 function App() {
   //state
@@ -41,6 +42,13 @@ function App() {
     });
   };
 
+  const songEndHandler = async () => {
+    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+    playAudio(isPlaying, audioRef);
+    return;
+  };
+
   return (
     <div className="App">
       <Nav
@@ -73,6 +81,7 @@ function App() {
         onLoadedMetadata={timeUpdateHandler}
         ref={audioRef}
         src={currentSong.audio}
+        onEnded={songEndHandler}
       ></audio>
     </div>
   );
