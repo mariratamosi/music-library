@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/muisic-library/static/css/main.30896ee6.chunk.css",
+    "main.js": "/muisic-library/static/js/main.4be49908.chunk.js",
+    "main.js.map": "/muisic-library/static/js/main.4be49908.chunk.js.map",
+    "runtime-main.js": "/muisic-library/static/js/runtime-main.a175a81d.js",
+    "runtime-main.js.map": "/muisic-library/static/js/runtime-main.a175a81d.js.map",
+    "static/js/2.1aa8b63e.chunk.js": "/muisic-library/static/js/2.1aa8b63e.chunk.js",
+    "static/js/2.1aa8b63e.chunk.js.map": "/muisic-library/static/js/2.1aa8b63e.chunk.js.map",
+    "index.html": "/muisic-library/index.html",
+    "static/css/main.30896ee6.chunk.css.map": "/muisic-library/static/css/main.30896ee6.chunk.css.map",
+    "static/js/2.1aa8b63e.chunk.js.LICENSE.txt": "/muisic-library/static/js/2.1aa8b63e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a175a81d.js",
+    "static/js/2.1aa8b63e.chunk.js",
+    "static/css/main.30896ee6.chunk.css",
+    "static/js/main.4be49908.chunk.js"
+  ]
+}
